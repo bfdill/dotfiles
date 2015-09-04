@@ -1,0 +1,30 @@
+alias gl='git-up'
+alias gp='git push'
+alias gd='git diff'
+alias gc="git commit -v"
+alias gca='git commit -a'
+alias gco='git checkout'
+alias gcb='git copy-branch-name'
+alias gb='git branch'
+alias gst='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
+alias gba="git branch -a"
+alias gcav="git commit -a -v"
+alias gcp="git cherry-pick"
+alias glog='git log -v'
+alias glogg="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias b="bundle"
+alias bi="b install --path vendor"
+alias bil="bi --local"
+alias bu="b update"
+alias be="b exec"
+alias binit="bi && b package"
+alias bcon="b console"
+alias reload!='. ~/.bash_profile'
+alias rlogs="tail -f log/development.log"
+alias rcon="rails console"
+alias routegrep="rake routes | grep "
+
+alias ls="ls -F --color"
+alias l="ls -lAh --color"
+alias ll="ls -l --color"
+alias la='ls -A --color'
