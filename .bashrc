@@ -94,3 +94,6 @@ done
 if [[ -f $HOME/.bash_profile ]]; then
   source $HOME/.bash_profile
 fi
+
+export NVM_DIR="/home/janders/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
