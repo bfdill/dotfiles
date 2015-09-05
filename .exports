@@ -6,12 +6,20 @@ export EDITOR=/usr/bin/vim;
 export HOSTNAME="$(hostname)";
 export HOSTNAME_SHORT="${HOSTNAME%%.*}";
 export HISTFILE=~/.history/history.$(date -u +%Y.%m.%d.%H.%M.%S)_${HOSTNAME}_$$
+
+# Enable persistent REPL history for `node`.
+export NODE_REPL_HISTORY_FILE=~/.node_history/history.$(date -u +%Y.%m.%d.%H.%M.%S)_${HOSTNAME}_$$;
+# Allow 32³ entries; the default is 1000.
+export NODE_REPL_HISTORY_SIZE='32768';
+
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=50000000;
 export HISTFILESIZE=$HISTSIZE;
 export HISTCONTROL=ignoredups:erasedups;
+
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help:* -h:pony:pony add *:pony update *:pony save *:pony ls:pony ls *";
+
 # After each command, save and reload history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
