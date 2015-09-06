@@ -40,3 +40,16 @@ pg() {
     --name postgres \
     postgres:9.4.4
 }
+
+cassandra(){
+  del_stopped cassandra
+
+  docker run -d \
+    -v /cassandra/data:/var/lib/cassandra/data \
+    --name cassandra \
+    cassandra:2.2.1
+}
+
+cqlsh(){
+  docker run -it --link cassandra:cassandra --rm cassandra:2.2.1 cqlsh cassandra
+}
