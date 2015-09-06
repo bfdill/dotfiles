@@ -57,3 +57,16 @@ cassandra(){
 cqlsh(){
   docker run -it --link cassandra:cassandra --rm cassandra:2.2.1 cqlsh cassandra
 }
+
+mongodb(){
+  del_stopped mongo
+
+  docker run -d \
+    -v /mongo/data:/data/db \
+    --name mongo \
+    mongo:3.0.6
+}
+
+mongo(){
+docker run -it --link mongo:mongo --rm mongo:3.0.6 sh -c 'exec mongo "$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/test"'
+}
