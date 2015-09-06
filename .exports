@@ -1,4 +1,5 @@
 #!/bin/bash
+export CDPATH=".:$HOME:$HOME/src"
 
 # Make vim the default editor
 export EDITOR=/usr/bin/vim;

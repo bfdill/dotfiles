@@ -1,3 +1,5 @@
+alias clone='github-clone'
+
 alias dc='docker-compose'
 alias gl='git-up'
 alias gp='git push'
