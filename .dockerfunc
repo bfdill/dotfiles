@@ -1,0 +1,42 @@
+#!/bin/bash
+# Bash wrappers for docker run commands
+
+# 
+# Helper Functions
+#
+dcleanup(){
+  docker rm $(docker ps --filter status=exited -q 2>/dev/null) 2>/dev/null
+  docker rmi $(docker images --filter dangling=true -q 2>/dev/null) 2>/dev/null
+}
+del_stopped(){
+  local name=$1
+  local state=$(docker inspect --format "{{.State.Running}}" $name 2>/dev/null)
+
+  if [[ "$state" == "false" ]]; then
+    docker rm $name
+  fi
+}
+relies_on(){
+  local containers=$@
+
+  for container in $containers; do
+    local state=$(docker inspect --format "{{.State.Running}}" $container 2>/dev/null)
+
+    if [[ "$state" == "false" ]] || [[ "$state" == "" ]]; then
+      echo "$container is not running, starting it for you."
+      $container
+    fi
+  done
+}
+
+pg() {
+  del_stopped postgres
+
+  docker run -d \
+    -p 5432:5432 \
+    -v /postgres/data:/var/lib/postgresql/data \
+    -e POSTGRES_PASSWORD=password \
+    -e POSTGRES_USER=janders \
+    --name postgres \
+    postgres:9.4.4
+}
