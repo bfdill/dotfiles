@@ -42,7 +42,9 @@ postgres(){
 }
 
 pg(){
-  docker run -it --link postgres:postgres --rm postgres:9.4.4 sh -c 'exec psql -h "$POSTGRES_PORT_5432_TCP_ADDR" -p "$POSTGRES_PORT_5432_TCP_PORT" -U janders'
+  docker run -it --link postgres:postgres \
+    --rm postgres:9.4.4 \
+    sh -c 'exec psql -h "$POSTGRES_PORT_5432_TCP_ADDR" -p "$POSTGRES_PORT_5432_TCP_PORT" -U janders'
 }
 
 cassandra(){
@@ -68,5 +70,22 @@ mongodb(){
 }
 
 mongo(){
-docker run -it --link mongo:mongo --rm mongo:3.0.6 sh -c 'exec mongo "$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/test"'
+  docker run -it --link mongo:mongo \
+    --rm mongo:3.0.6 \
+    sh -c 'exec mongo "$MONGO_PORT_27017_TCP_ADDR:$MONGO_PORT_27017_TCP_PORT/test"'
+}
+
+redis(){
+  del_stopped redis
+
+  docker run -d \
+    -v /redis/data:/data \
+    --name redis \
+    redis:3.0.3 redis-server --appendonly yes
+}
+
+redis-cli(){
+  docker run -it --link redis:redis \
+    --rm redis:3.0.3 \
+    sh -c 'exec redis-cli -h "$REDIS_PORT_6379_TCP_ADDR" -p "$REDIS_PORT_6379_TCP_PORT"'
 }
