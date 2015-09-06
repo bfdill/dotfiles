@@ -29,7 +29,7 @@ relies_on(){
   done
 }
 
-pg() {
+postgres(){
   del_stopped postgres
 
   docker run -d \
