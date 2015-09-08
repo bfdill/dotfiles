@@ -164,8 +164,8 @@
 
   insteadOf = "gist:"
 [user]
-  email = github@janders223.com
-  name = Jim Anders
+	email = github@janders223.com
+	name = Jim Anders
 
 [github]
-  user = janders223
+	user = janders223

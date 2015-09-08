@@ -85,7 +85,30 @@ redis(){
 }
 
 redis-cli(){
-  docker run -it --link redis:redis \
-    --rm redis:3.0.3 \
-    sh -c 'exec redis-cli -h "$REDIS_PORT_6379_TCP_ADDR" -p "$REDIS_PORT_6379_TCP_PORT"'
+docker run -it --link redis:redis \
+  --rm redis:3.0.3 \
+  sh -c 'exec redis-cli -h "$REDIS_PORT_6379_TCP_ADDR" -p "$REDIS_PORT_6379_TCP_PORT"'
 }
+
+mutt(){
+  # subshell so we dont overwrite variables
+  (
+  local account=$1
+
+  if [[ "$account" == "docker" ]]; then
+    GMAIL=$GMAIL2
+    GMAIL_NAME=$GMAIL2_NAME
+    GMAIL_PASS=$GMAIL2_PASS
+    GMAIL_FROM=$GMAIL2_FROM
+  fi
+
+  docker run -it --rm \
+    -e GMAIL \
+    -e GMAIL_NAME \
+    -e GMAIL_PASS \
+    -e GMAIL_FROM \
+    -v $HOME/.gnupg:/home/user/.gnupg \
+    -v /etc/localtime:/etc/localtime:ro \
+    --name mutt${account} \
+    janders223/mutt
+  )}
