@@ -22,6 +22,11 @@ for option in autocd globstar; do
   shopt -s "$option" 2> /dev/null
 done
 
+source ~/.nvm/nvm.sh
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # Add tab completion for many Bash commands
 if [ -f /etc/bash_completion ]; then
   source /etc/bash_completion;

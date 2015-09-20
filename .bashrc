@@ -25,16 +25,6 @@ esac
 # should be on the output of commands, not on the prompt
 force_color_prompt=yes
 
-export NVM_DIR="/home/janders/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-if [[ -f $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh ]]; then
-  source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
-fi
-
 if [[ -f $HOME/.bash_profile ]]; then
   source $HOME/.bash_profile
 fi
