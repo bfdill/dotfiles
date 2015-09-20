@@ -30,7 +30,6 @@ etc:
 
 init:
 	# install init scripts
-	# of course systemd hates aliases or some bullshit
 	for file in $(shell find $(CURDIR)/init -type f); do \
 		f=$$(basename $$file); \
 		sudo install -p -m 644 $$file /lib/systemd/system/$$f; \
