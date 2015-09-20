@@ -27,6 +27,8 @@ alias rlogs="tail -f log/development.log"
 alias rcon="rails console"
 alias routegrep="rake routes | grep "
 alias vim="mvim -v -N"
+alias dm="docker-machine"
+alias dc="docker-compose"
 
 # grc overides for ls
 #   Made possible through contributions from generous benefactors like
