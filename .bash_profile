@@ -27,7 +27,12 @@ source ~/.nvm/nvm.sh
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# GRC colorizes nifty unix tools all over the place
+source `brew --prefix`/etc/grc.bashrc
+
 # Add tab completion for many Bash commands
-if [ -f /etc/bash_completion ]; then
+if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+  source "$(brew --prefix)/etc/bash_completion";
+elif [ -f /etc/bash_completion ]; then
   source /etc/bash_completion;
-fi;
+fi
