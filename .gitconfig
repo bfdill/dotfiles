@@ -111,7 +111,7 @@
 
 [mergetool "vimdiff"]
   cmd="vim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
-  keepbackup=false
+  keepBackup=false
 
 [merge]
 
