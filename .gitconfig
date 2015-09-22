@@ -130,8 +130,6 @@
   summary = true
   verbosity = 1
   tool = vimdiff
-  # Include summaries of merged commits in newly created merge commit messages
-  log = true
 
 [push]
 
@@ -146,7 +144,6 @@
 # URL shorthands
 [url "git@github.com:"]
 
-  insteadOf = https://github.com/
   pushInsteadOf = "github:"
   pushInsteadOf = "git://github.com/"
 
