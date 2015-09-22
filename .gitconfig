@@ -1,26 +1,15 @@
 [alias]
 
-  co        = checkout
-  br        = branch
-  promote   = !git-promote
   wtf       = !git-wtf
-  rank      = !git-rank-contributors
-  count     = !git shortlog -sn
-  a         = !git-all
   churn     = !git-churn
-  delete    = !git-delete-local-merged
-  nuke      = !git-nuke
-  track     = !git-track
-  undo      = !git-undo
-  unpushed  = !git-unpushed
   changelog = !git-changelog
-  loc       = !git-loc
+
   rewrite   = "!r() { git rebase -i HEAD~$1; }; r"
   # View abbreviated SHA, description, and history graph of the latest 20 commits
   l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
   # View the current working tree status using the short format
-  s = status -s
+  s = status -sb
 
   # Show the diff between the latest commit and the current state
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
@@ -72,7 +61,7 @@
 
   # List contributors with number of commits
   contributors = shortlog --summary --numbered
-  lg = log --color --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  logg = log --color --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   mdiff = "!f() { git stash | head -1 | grep -q 'No local changes to save'; x=$?; git merge --no-commit $1 &>/dev/null; git add -u &>/dev/null; git diff --staged; git reset --hard &>/dev/null; test $x -ne 0 && git stash pop &>/dev/null; }; f"
 
 [apply]
