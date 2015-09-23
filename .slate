@@ -1,0 +1,148 @@
+# OSX SlateApp Dotfile
+
+
+## Config Options
+config keyboardLayout qwerty
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+
+
+## Position Definitions (not all used in bindings)
+alias full               push    top           bar-resize:screenSizeY
+alias center             move    screenSizeX/10;0 screenSizeX/1.25;screenSizeY
+alias center-n           push    up            center
+
+alias half-n             push    top           bar-resize:screenSizeY/2
+alias half-e             push    right         bar-resize:screenSizeX/2
+alias half-s             push    bottom        bar-resize:screenSizeY/2
+alias half-w             push    left          bar-resize:screenSizeX/2
+
+alias third-n            push    top           bar-resize:screenSizeY/3
+alias third-e            push    right         bar-resize:screenSizeX/3
+alias third-s            push    bottom        bar-resize:screenSizeY/3
+alias third-w            push    left          bar-resize:screenSizeX/3
+
+alias quad-nw            corner  top-left      resize:screenSizeX/2;screenSizeY/2
+alias quad-ne            corner  top-right     resize:screenSizeX/2;screenSizeY/2
+alias quad-se            corner  bottom-right  resize:screenSizeX/2;screenSizeY/2
+alias quad-sw            corner  bottom-left   resize:screenSizeX/2;screenSizeY/2
+
+alias col-e              push    right         bar-resize:screenSizeX/5
+alias col-w              push    left          bar-resize:screenSizeX/5
+
+alias col-ne             corner  top-right     resize:screenSizeX/5;screenSizeY/2
+alias col-se             corner  bottom-right  resize:screenSizeX/5;screenSizeY/2
+alias col-sw             corner  bottom-left   resize:screenSizeX/5;screenSizeY/2
+alias col-nw             corner  top-left      resize:screenSizeX/5;screenSizeY/2
+
+alias major-w            push    left          bar-resize:screenSizeX/1.25
+alias major-e            push    right         bar-resize:screenSizeX/1.25
+
+alias anchor-ne          corner  top-right
+alias anchor-nw          corner  top-left
+
+
+## Modifier
+alias mod ctrl;alt;cmd
+
+
+## Key Bindings
+
+### Full
+bind k:${mod} chain ${full} | ${center}
+
+### Big Windows
+bind j:${mod} chain ${major-w} | ${center-n} | ${major-e} | ${center-n}
+
+### Ring Around the Screen
+bind o:${mod} chain ${quad-nw} | ${half-n} | ${quad-ne} | ${half-e} | ${quad-se} | ${half-s} | ${quad-sw} | ${half-w}
+
+### Split Vertical
+bind v:${mod} chain ${half-n} | ${half-s}
+
+### Split Horizontal
+bind h:${mod} chain ${half-w} | ${half-e}
+bind ;:${mod} chain ${half-e} | ${half-w}
+
+### Anchor Top Right
+bind p:${mod} ${anchor-ne}
+
+### Anchor Top Left
+bind y:${mod} ${anchor-nw}
+
+### Columns
+bind l:${mod} chain ${col-e} | ${col-w}
+
+### Thirds
+bind t:${mod} chain ${third-w} | ${center-n} | ${third-e}
+
+
+## Grid Overlay
+bind g:${mod} grid padding:5 1920x1080:3,3
+bind g:${mod} grid padding:5 1280x800:3,3
+
+
+## Screen Configurations
+# default macbook          resolutions:1280x800
+# default acer             resolutions:1920x1080
+
+
+## Application Layouts
+
+### Macbook
+# layout macbook           'Airmail':REPEAT         ${full}
+# layout macbook           'Calendar':REPEAT        ${full}
+# layout macbook           'Finder':REPEAT          ${half-w} | ${half-e}
+# layout macbook           'Firefox':REPEAT         ${full}
+# layout macbook           'Flint':REPEAT           ${third-e}
+# layout macbook           'Google Chrome':REPEAT   ${full}
+# layout macbook           'Hermes':REPEAT          ${anchor-ne}
+# layout macbook           'iTerm':REPEAT           ${half-w} | ${half-e}
+# layout macbook           'MacVim':REPEAT          ${full}
+# layout macbook           'Messages':REPEAT        ${half-w}
+# layout macbook           'Opera':REPEAT           ${full}
+# layout macbook           'Reminders':REPEAT       ${half-e}
+# layout macbook           'Safari':REPEAT          ${full}
+# layout macbook           'Slack':REPEAT           ${major-w}
+# layout macbook           'Sublime Text':REPEAT    ${major-e}
+
+### External Monitor
+# layout acer              'Airmail':REPEAT         ${major-w}
+# layout acer              'Calendar':REPEAT        ${major-e}
+# layout acer              'Finder':REPEAT          ${half-w} | ${half-e}
+# layout acer              'Firefox':REPEAT         ${major-w}
+# layout acer              'Flint':REPEAT           ${third-e}
+# layout acer              'Google Chrome':REPEAT   ${major-e}
+# layout acer              'Hermes':REPEAT          ${anchor-ne}
+# layout acer              'iTerm':REPEAT           ${half-w} | ${half-e}
+# layout acer              'MacVim':REPEAT          ${half-w} | ${half-e}
+# layout acer              'Messages':REPEAT        ${third-w}
+# layout acer              'Opera':REPEAT           ${center}
+# layout acer              'Reminders':REPEAT       ${third-e}
+# layout acer              'Safari':REPEAT          ${center}
+# layout acer              'Slack':REPEAT           ${half-w}
+# layout acer              'Sublime Text':REPEAT    ${half-e}
+
+
+## Screen Throw
+bind 9:${mod} throw 0 resize
+bind 0:${mod} throw 1 resize
+
+
+## Window Hinting Command and Shortcut Keys
+bind i:${mod} hint jkluionm
+
+
+## App Bindings
+# bind f:${mod} focus 'Flint'
+# bind m:${mod} focus 'Hermes'
+# bind t:${mod} focus 'iTerm'
+# bind m:${mod} focus 'Messages'
+# bind r:${mod} focus 'Reminders'
+# bind s:${mod} focus 'Slack'
+#### bind e:${mod} focus ${browser}
+#### bind u:${mod} focus ${editor}
+
