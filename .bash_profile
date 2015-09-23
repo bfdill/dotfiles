@@ -22,13 +22,15 @@ for option in autocd globstar; do
   shopt -s "$option" 2> /dev/null
 done
 
-source ~/.nvm/nvm.sh
+source $HOME/.nvm/nvm.sh
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # GRC colorizes nifty unix tools all over the place
-source `brew --prefix`/etc/grc.bashrc
+if which brew > /dev/null && [ -f "$(brew --prefix)/etc/grc.bashrc" ]; then
+  source `brew --prefix`/etc/grc.bashrc
+fi
 
 # Add tab completion for many Bash commands
 if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
