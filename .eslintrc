@@ -28,7 +28,7 @@
       "no-extra-semi": 2,
       "no-func-assign": 2,
       "no-inner-declarations": [2, "both"],
-      "no-invalid-regex": 2,
+      "no-invalid-regexp": 2,
       "no-irregular-whitespace": 2,
       "no-negated-in-lhs": 2,
       "no-obj-calls": 2,
@@ -106,7 +106,7 @@
       "no-self-compare": 2,
       "no-sequences": 2,
       "no-throw-literal": 2,
-      "no-unused-espressions": [2, {
+      "no-unused-expressions": [2, {
         "allowShortCircuit": false,
         "allowTernary": false
       }],
@@ -131,9 +131,7 @@
       // Strict Mode Violation
       "strict": [2, "global"],
       // Variable Declaration Violations
-      "init-declarations": [2, "always", {
-        "ignoreForLoopInit": true
-      }],
+      "init-declarations": [2, "always"],
       "no-catch-shadow": 2,
       "no-delete-var": 2,
       "no-label-var": 2,
@@ -162,7 +160,7 @@
       // Stylistic Violations
       "array-bracket-spacing": [2, "never"],
       "block-spacing": [2, "always"],
-      "brace-style": [2, "1tbs", {i
+      "brace-style": [2, "1tbs", {
         "allowSingleLine": true
       }],
       "camelcase": [2, {
@@ -183,9 +181,6 @@
       "id-length": [2, {
         "min": 2,
         "properties": "always"
-      }],
-      "id-match": [2, "^[a-z]+([A-Z][a-z]+)*$", {
-        "properties": true
       }],
       "indent": [2, 2, {
         "SwitchCase": 0,
@@ -224,16 +219,14 @@
       "no-restricted-syntax": [2, "ClassDeclaration"],
       "no-spaced-func": 2,
       "no-ternary": 2,
-      "no-trailing-spaces": [2, {
-        "skipBLankLines": false
-      }],
+      "no-trailing-spaces": 2,
       "no-underscore-dangle": [2, {
         "allow": []
       }],
       "no-unneeded-ternary": 2,
       "object-curly-spacing": [2, "always"],
       "one-var": [2, "never"],
-      "operator-assignment": [2, "always"]
+      "operator-assignment": [2, "always"],
       "operator-linebreak": [2, "after"],
       "padded-blocks": [2, "never"],
       "quote-props": [2, "consistent-as-needed"],
@@ -248,7 +241,7 @@
       "space-after-keywords": [2, "always"],
       "space-before-blocks": [2, "always"],
       "space-before-function-paren": [2, "never"],
-      "space-before-keyword": [2, "always"],
+      "space-before-keywords": [2, "always"],
       "space-in-parens": [2, "never"],
       "space-infix-ops": [2, {
         "int32Hint": false
