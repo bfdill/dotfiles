@@ -45,7 +45,7 @@
         "setWithoutGet": true
       }],
       "block-scoped-var": 2,
-      "complexity": [2, 2],
+      "complexity": [2, 6],
       "consistent-return": 2,
       "curly": [2, all],
       "default-case": 2,
@@ -78,7 +78,7 @@
       "no-labels": 2,
       "no-lone-blocks": 2,
       "no-loop-func": 2,
-      "no-magic-numbers": 2,
+      "no-magic-numbers": 0,
       "no-multi-spaces": [2, {
         "exceptions": {
           "Property": true,
@@ -131,7 +131,7 @@
       // Strict Mode Violation
       "strict": [2, "global"],
       // Variable Declaration Violations
-      "init-declarations": [2, "always"],
+      "init-declarations": [2, "always" ],
       "no-catch-shadow": 2,
       "no-delete-var": 2,
       "no-label-var": 2,
@@ -144,7 +144,7 @@
       "no-undefined": 2,
       "no-unused-vars": [2, {
         "vars": "all",
-        "args": "all"
+        "args": "after-used"
       }],
       "no-use-before-define": 2,
       // NodeJS Violations
@@ -178,7 +178,7 @@
       "func-style": [2, "declaration", {
         "allowArrowFunctions": true
       }],
-      "id-length": [2, {
+      "id-length": [0, {
         "min": 2,
         "properties": "always"
       }],
@@ -186,7 +186,7 @@
         "SwitchCase": 0,
         "VariableDeclarator": 0
       }],
-      "jsx-quotes": [2, "prefer-double"],
+      "jsx-quotes": [2, "prefer-single"],
       "key-spacing": [2, {
         "align": "value"
       }],
@@ -202,7 +202,7 @@
         "allowArrayEnd": false
       }],
       "max-nested-callbacks": [2, 3],
-      "new-cap": 2,
+      "new-cap": 0,
       "new-parens": 2,
       "newline-after-var": [2, "always"],
       "no-array-constructor": 2,
@@ -267,7 +267,7 @@
       "prefer-arrow-callback": 2,
       "prefer-const": 2,
       "prefer-reflect": 0,
-      "prefer-spread": 2,
+      "prefer-spread": 0,
       "prefer-template": 2,
       "require-yield": 2,
       // Legacy Violations
@@ -277,6 +277,6 @@
         "ignoreUrls": true
       }],
       "max-params": [2, 3],
-      "max-statements": [2, 8]
+      "max-statements": [2, 10]
     }
 }
