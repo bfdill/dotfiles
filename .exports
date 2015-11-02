@@ -2,7 +2,7 @@
 export CDPATH=".:$HOME:$HOME/dev/src"
 
 # Make vim the default editor
-export EDITOR=/usr/bin/vim;
+export EDITOR=/usr/local/bin/mvim;
 
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY_FILE=~/.node_history/history.$(date -u +%Y.%m.%d.%H.%M.%S)_${HOSTNAME}_$$;
