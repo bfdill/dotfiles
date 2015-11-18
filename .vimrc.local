@@ -1,0 +1,12 @@
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set nosmarttab
+
+set textwidth=80
+
+" Set syntastic checker for project type
+" let g:syntastic_<filetype>_checkers = ['executable for checker']
+" Passively check HTML if needed
+" let g:syntastic_mode_map = { 'passive_filetypes': ['html']  }
