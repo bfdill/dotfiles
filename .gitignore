@@ -14,3 +14,5 @@ Session.vim
 
 .extra
 .nginx/conf.d/*
+
+/node_modules/
