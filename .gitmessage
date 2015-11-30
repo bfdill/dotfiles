@@ -1,6 +1,12 @@
-
-
 # 50-character subject line
+# feat(_scope_): A new feature
+# fix(_scope_): A bug fix
+# docs(_scope_): A documnetation only change
+# style(_scope_): Changes that do not affect the meaning of the code
+# refactor(_scope_): A code change that neither fixes a bug or creates a feature
+# perf(_scope_): A code change that improves performance
+# test(_scope_): Add missing test
+# chore(_scope_): Changes to the build process or tooling
 #
 # 72-character wrapped longer description. This should answer:
 #
