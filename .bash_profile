@@ -22,7 +22,7 @@ for option in autocd globstar; do
   shopt -s "$option" 2> /dev/null
 done
 
-source $HOME/.nvm/nvm.sh
+source $(brew --prefix nvm)/nvm.sh
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
@@ -38,5 +38,3 @@ if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
 elif [ -f /etc/bash_completion ]; then
   source /etc/bash_completion;
 fi
-
-eval "$(docker-machine env default)"

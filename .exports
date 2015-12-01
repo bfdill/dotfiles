@@ -37,3 +37,5 @@ export GREP_OPTIONS='--color=auto';
 
 # Default to development
 export NODE_ENV=development
+
+export NVM_DIR=~/.nvm
