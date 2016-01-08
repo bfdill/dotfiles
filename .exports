@@ -4,11 +4,6 @@ export CDPATH=".:$HOME:$HOME/dev/src"
 # Make vim the default editor
 export EDITOR=/usr/local/bin/mvim;
 
-# Enable persistent REPL history for `node`.
-export NODE_REPL_HISTORY_FILE=~/.node_history/history.$(date -u +%Y.%m.%d.%H.%M.%S)_${HOSTNAME}_$$;
-# Allow 32³ entries; the default is 1000.
-export NODE_REPL_HISTORY_SIZE='32768';
-
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=50000000;
 export HISTFILESIZE=$HISTSIZE;
@@ -34,8 +29,3 @@ export DBUS_SESSION_BUS_ADDRESS=unix:path=/var/run/user/$(id -u)/bus;
 
 # Always enable colored `grep` output.
 export GREP_OPTIONS='--color=auto';
-
-# Default to development
-export NODE_ENV=development
-
-export NVM_DIR=~/.nvm

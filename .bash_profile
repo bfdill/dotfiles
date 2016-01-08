@@ -22,11 +22,6 @@ for option in autocd globstar; do
   shopt -s "$option" 2> /dev/null
 done
 
-source $(brew --prefix nvm)/nvm.sh
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 # GRC colorizes nifty unix tools all over the place
 if which brew > /dev/null && [ -f "$(brew --prefix)/etc/grc.bashrc" ]; then
   source `brew --prefix`/etc/grc.bashrc
@@ -38,3 +33,5 @@ if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
 elif [ -f /etc/bash_completion ]; then
   source /etc/bash_completion;
 fi
+
+eval $(docker-machine env dev)

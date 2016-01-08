@@ -96,7 +96,7 @@
       "no-param-reassign": [2, {
         "props": true
       }],
-      "no-process-env": 2,
+      "no-process-env": 0,
       "no-proto": 2,
       "no-redeclare": [2, {
         "builtinGlobals": true
@@ -129,7 +129,7 @@
         "exceptRange": true
       }],
       // Strict Mode Violation
-      "strict": [2, "global"],
+      "strict": 0,
       // Variable Declaration Violations
       "init-declarations": [2, "always" ],
       "no-catch-shadow": 2,
