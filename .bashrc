@@ -28,3 +28,5 @@ force_color_prompt=yes
 if [[ -f $HOME/.bash_profile ]]; then
   source $HOME/.bash_profile
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
