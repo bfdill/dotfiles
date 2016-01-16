@@ -48,3 +48,7 @@ ensure_tmux_is_running() {
     tat
     fi
 }
+
+conflicted() {
+  vim +Conflicted
+}
