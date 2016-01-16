@@ -17,26 +17,20 @@
   unstage   = reset
   wtf       = !git-wtf
 [apply]
-
   # Detect whitespace errors when applying a patch
   whitespace = fix
-
 [core]
-
   # Use custom `.gitignore` and `.gitattributes`
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
-
   # Treat spaces before tabs and all kinds of trailing whitespace as an error
   # [default] trailing-space: looks for spaces at the end of a line
   # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
   whitespace = space-before-tab,-indent-with-non-tab,trailing-space
-
   # Make `git rebase` safer on OS X
   # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
   trustctime = false
   editor = mvim -v -N
-
 [color]
   ui = auto
   diff = auto
@@ -44,70 +38,47 @@
   branch = auto
   interactive = auto
   grep = auto
-
 [commit]
   template = ~/.gitmessage
-
 [diff]
-
   # Detect copies as well as renames
   renames = copies
   tool = vimdiff
-
 [fetch]
-
   prune = true
-
 [help]
-
   # Automatically correct and execute mistyped commands
   autocorrect = 1
-
 [mergetool]
   prompt = false
 	keepBackup = false
-
 [mergetool "vimdiff"]
   cmd="vim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
-
 [merge]
   ff = only
   summary = true
   verbosity = 1
   tool = vimdiff
-
 [push]
-
   default = upstream
-
 [pull]
   rebase = true
-
 # URL shorthands
 [url "git@github.com:"]
-
   pushInsteadOf = "github:"
   pushInsteadOf = "git://github.com/"
-
 [url "git://github.com/"]
-
   insteadOf = "github:"
-
 [url "git@gist.github.com:"]
-
   insteadOf = "gst:"
   pushInsteadOf = "gist:"
   pushInsteadOf = "git://gist.github.com/"
-
 [url "git://gist.github.com/"]
-
   insteadOf = "gist:"
 [user]
 	email = jim@janders223.com
 	name = Jim Anders
-
 [github]
 	user = janders223
-
 [credential]
 	helper = osxkeychain
