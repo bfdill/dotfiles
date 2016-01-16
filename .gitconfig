@@ -110,6 +110,10 @@
   renames = copies
   tool = vimdiff
 
+[fetch]
+
+  prune = true
+
 [help]
 
   # Automatically correct and execute mistyped commands
