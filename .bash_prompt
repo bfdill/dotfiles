@@ -99,9 +99,9 @@ proxy_status() {
 # Set the terminal title to the current working directory.
 PS1="\[\033]0;\w\007\]";
 PS1+="\[${bold}\]\n"; # newline
+PS1+="\[${red}\]\$(proxy_status)"; # proxy status
 PS1+="\[${green}\] \W"; # working directory
 PS1+="\$(prompt_git \"${white} on ${violet}\")"; # Git repository details
-PS1+="\[${red}\] \$(proxy_status)"; # proxy status
 PS1+="\n";
 PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
 export PS1;
