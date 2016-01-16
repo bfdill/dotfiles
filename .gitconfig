@@ -123,7 +123,7 @@
   cmd="vim -c 'Gdiff' $MERGED"     # use fugitive.vim for 3-way merge
 
 [merge]
-
+  ff = only
   summary = true
   verbosity = 1
   tool = vimdiff
@@ -155,7 +155,7 @@
 
   insteadOf = "gist:"
 [user]
-	email = github@janders223.com
+	email = jim@janders223.com
 	name = Jim Anders
 
 [github]
