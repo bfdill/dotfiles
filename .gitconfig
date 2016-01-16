@@ -68,6 +68,8 @@
   contributors = shortlog --summary --numbered
   logg = log --color --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
+  unstage = reset
+
 [apply]
 
   # Detect whitespace errors when applying a patch
