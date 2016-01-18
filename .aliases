@@ -1,20 +1,22 @@
 alias b="bundle"
+alias bcon="b console"
+alias be="b exec"
 alias bi="b install --path vendor"
 alias bil="bi --local"
-alias bu="b update"
-alias be="b exec"
 alias binit="bi && b package"
-alias bcon="b console"
+alias bu="b update"
 alias clone='github-clone'
 alias dc='docker-compose'
 alias dm="docker-machine"
-alias reload!='. ~/.bashrc'
-alias rlogs="tail -f log/development.log"
-alias rcon="rails console"
-alias routegrep="rake routes | grep "
-alias vim="mvim -v -N"
+alias dmip='docker-machine ip $(docker-machine active) | pbcopy'
 alias mutt='cd ~/Desktop && mutt'
 alias novim='vim -u ~/Downloads/code/essential.vim'
+alias rails='docker run -it --rm --user "$(id -u):$(id -g)" -v "$PWD":/usr/src/app -w /usr/src/app janders223/rails:5.0.0.beta1 rails'
+alias rcon="rails console"
+alias reload!='. ~/.bashrc'
+alias rlogs="tail -f log/development.log"
+alias routegrep="rake routes | grep "
+alias vim="mvim -v -N"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
