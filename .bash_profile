@@ -34,8 +34,5 @@ elif [ -f /etc/bash_completion ]; then
   source /etc/bash_completion;
 fi
 
-eval $(docker-machine env dev)
-
 # Always, always, always be in tmux
 ensure_tmux_is_running
-
