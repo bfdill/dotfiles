@@ -7,6 +7,7 @@ alias binit="bi && b package"
 alias bu="b update"
 alias clone='github-clone'
 alias dc='docker-compose'
+alias dcoker='docker'
 alias dm="docker-machine"
 alias mutt='cd ~/Desktop && mutt'
 alias novim='vim -u ~/Downloads/code/essential.vim'
@@ -16,7 +17,6 @@ alias reload!='. ~/.bashrc'
 alias rlogs="tail -f log/development.log"
 alias routegrep="rake routes | grep "
 alias vim="mvim -v -N"
-alias dcoker='docker'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
