@@ -54,13 +54,9 @@ conflicted() {
 }
 
 docker-office() {
-  docker-machine stop home
-  docker-machine start office
   eval $(docker-machine env --no-proxy office)
 }
 
 docker-home() {
-  docker-machine stop office
-  docker-machine start home
   eval $(docker-machine env home)
 }
