@@ -11,7 +11,6 @@ alias dcoker='docker'
 alias dm="docker-machine"
 alias elm='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" --user "$(id -u):$(id -g)" -p 8000:8000 codesimple/elm:0.16'
 alias mutt='cd ~/Desktop && mutt'
-alias novim='vim -u ~/Downloads/code/essential.vim'
 alias rails='docker run -it --rm --user "$(id -u):$(id -g)" -v "$PWD":/usr/src/app -w /usr/src/app janders223/rails:5.0.0.beta1 rails'
 alias rcon="rails console"
 alias reload!='. ~/.bashrc'
