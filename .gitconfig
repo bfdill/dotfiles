@@ -73,3 +73,7 @@
 	user = janders223
 [credential]
 	helper = osxkeychain
+[rebase]
+	autostash = true
+[stash]
+	showPatch = true
