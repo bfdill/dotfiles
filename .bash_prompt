@@ -4,21 +4,6 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
 export TERM='xterm-256color';
 fi;
 
-if tput setaf 1 &> /dev/null; then
-tput sgr0; # reset colors
-bold=$(tput bold);
-reset=$(tput sgr0);
-black=$(tput setaf 0);
-blue=$(tput setaf 33);
-cyan=$(tput setaf 37);
-green=$(tput setaf 64);
-orange=$(tput setaf 166);
-purple=$(tput setaf 125);
-red=$(tput setaf 124);
-violet=$(tput setaf 61);
-white=$(tput setaf 15);
-yellow=$(tput setaf 136);
-else
 bold='';
 reset="\e[0m";
 black="\e[1;30m";
@@ -31,7 +16,6 @@ red="\e[1;31m";
 violet="\e[1;35m";
 white="\e[1;37m";
 yellow="\e[1;33m";
-fi;
 
 proxy_status() {
   if env | grep -q ^HTTP_PROXY=
