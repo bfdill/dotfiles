@@ -36,3 +36,5 @@ fi
 
 # Always, always, always be in tmux
 ensure_tmux_is_running
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
