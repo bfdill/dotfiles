@@ -1,20 +1,8 @@
-alias b="bundle"
-alias bcon="b console"
-alias be="b exec"
-alias bi="b install --path vendor"
-alias bil="bi --local"
-alias binit="bi && b package"
-alias bu="b update"
 alias clone='github-clone'
 alias dc='docker-compose'
 alias dcoker='docker'
 alias dm="docker-machine"
-alias elm='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" --user "$(id -u):$(id -g)" -p 8000:8000 codesimple/elm:0.16'
-alias mutt='cd ~/Desktop && mutt'
-alias rcon="rails console"
 alias reload!='. ~/.bashrc'
-alias rlogs="tail -f log/development.log"
-alias routegrep="rake routes | grep "
 alias vim="mvim -v -N"
 
 # Detect which `ls` flavor is in use
